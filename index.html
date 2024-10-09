@@ -1,30 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-
-    <div id="lightningout"></div>
-
     <script src="https://inspiration-speed-9288.scratch.lightning.force.com/lightning/lightning.out.js"></script>
     <script>
       $Lightning.use(
-        'c:formApp', // name of the Lightning app
+        "c:formApp",
         function () {
-          // Callback once framework and app loaded
           $Lightning.createComponent(
-            'c:formComponent', // top-level component of your app
-            {}, // attributes to set on the component when created
-            'lightningout', // the DOM location to insert the component
+            "c:formComponent",
+            {},
+            "lightning",
             function (cmp) {
-              // callback when component is created and active on the page
+              console.log("Component created");
             }
           );
         },
-        'https://inspiration-speed-9288.scratch.my.site.com' // Site endpoint
+        "https://inspiration-speed-9288.scratch.my.site.com"
       );
     </script>
+  </head>
+  <body>
+    <div id="lightning"></div>
   </body>
 </html>
