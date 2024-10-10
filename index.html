@@ -2,26 +2,28 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+            function init(){
+                <script src="https://swamy5-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
+                $Lightning.use(
+                    'c:LightningOutDependencyApp', // name of the Lightning Out app
+                    function () { // callback after the framework and app load
+                        $Lightning.createComponent(
+                            'c:helloWorld', // top-level component of the Lightning Out app
+                            {}, // attributes to set on the component
+                            'lightning-out', // DOM element ID where the component is inserted
+                            function (cmp) { // callback after the component loads
+                                console.log('The component was created.');
+                            }
+                        );
+                    },
+                    'https://swamy5-dev-ed.develop.my.site.com' // Experience Cloud site endpoint
+                );
+            }
+        </script>
     </head>
-    <body>
+    <body onload="init()">
         <h1>My External Page</h1>
         <div id="lightning-out"></div>
-        <script src="https://swamy5-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
-        <script>
-            $Lightning.use(
-                'c:LightningOutDependencyApp', // name of the Lightning Out app
-                function () { // callback after the framework and app load
-                    $Lightning.createComponent(
-                        'c:helloWorld', // top-level component of the Lightning Out app
-                        {}, // attributes to set on the component
-                        'lightning-out', // DOM element ID where the component is inserted
-                        function (cmp) { // callback after the component loads
-                            console.log('The component was created.');
-                        }
-                    );
-                },
-                'https://swamy5-dev-ed.develop.my.site.com' // Experience Cloud site endpoint
-            );
-        </script>
     </body>
 </html>
